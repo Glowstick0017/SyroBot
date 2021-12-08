@@ -12,7 +12,9 @@ class MyClient(discord.Client):
 
         if message.content.upper() == 'SYRO':
             await message.channel.send('you can always do it yourself, right?')
-
+            
+        if message.content.lower() == 'can you help me with this?':
+            await message.channel.send("I won't answer because I expect you to be reading the textbook")
 
 client = MyClient()
 client.run('ENTER TOKEN HERE')
