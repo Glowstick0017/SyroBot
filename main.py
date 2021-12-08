@@ -1,5 +1,5 @@
 import discord
-
+import os
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -13,12 +13,12 @@ class MyClient(discord.Client):
         if message.content.upper() == 'SYRO':
             await message.channel.send('you can always do it yourself, right?')
         
+        if message.content.lower() == 'syro, can you give me actual feedback that i can use to improve':
+            await message.channel.send("Test cases did not work")
+        
         if message.content.lower() == 'syro, can you help me with this?':
             await message.channel.send("I won't answer because I expect you to be reading the textbook")
-        
-        if message.content.lower() == 'syro, can you give me feedback so I can improve?':
-          await message.channel.send("Test cases did not work")
 
 
 client = MyClient()
-client.run('ENTER TOKEN HERE')
+client.run(os.getenv("DISCORD_BOT_SECRET"))
