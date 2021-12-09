@@ -4,6 +4,7 @@ import os
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='"syro"'))
 
     async def on_message(self, message):
 
